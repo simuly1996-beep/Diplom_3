@@ -13,9 +13,9 @@ class TestOrdersCounter:
         main_page = MainPage(driver)
         feed_page = FeedPage(driver)
 
-        main_page.is_main_page_open()
+        main_page.wait_main_page_loaded()
         main_page.click_feed()     
-        feed_page.is_feed_page_open()
+        feed_page.wait_feed_page_loaded()
 
         before_total = feed_page.get_total_orders()
 
@@ -40,9 +40,9 @@ class TestOrdersCounter:
         main_page = MainPage(driver)
         feed_page = FeedPage(driver)
 
-        main_page.is_main_page_open()
+        main_page.wait_main_page_loaded()
         main_page.click_feed()     
-        feed_page.is_feed_page_open()
+        feed_page.wait_feed_page_loaded()
 
         before_total = feed_page.get_day_orders()
 
@@ -79,7 +79,7 @@ class TestOrdersCounter:
         main_page.wait_order_modal_closed()
 
         main_page.click_feed()
-        feed_page.is_feed_page_open()
+        feed_page.wait_feed_page_loaded()
         
         feed_page.wait_in_work_current_loaded()
         current_in_work_order = feed_page.get_in_work_order()

@@ -17,8 +17,12 @@ class FeedPage(BasePage):
         self.click(FeedPageLocators.CONSTRUCTOR_BUTTON)
     
     @allure.step("дождаться загрузки страницы")   
-    def is_feed_page_open(self):
+    def wait_feed_page_loaded(self):
         self.wait_visibility(FeedPageLocators.FEED_TITLE)
+
+    @allure.step("проверить url страницы") 
+    def is_feed_page_url(self):
+        return self.get_current_url() == FEED_URL
     
     @allure.step("Вернуть значение счетчика выполнено за все время")
     def get_total_orders(self):

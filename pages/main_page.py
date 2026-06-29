@@ -19,8 +19,12 @@ class MainPage(BasePage):
         self.click(MainPageLocators.ORDER_FEED_BUTTON)
    
     @allure.step("дождаться загрузки страницы")   
-    def is_main_page_open(self):
+    def wait_main_page_loaded(self):
         self.wait_visibility(MainPageLocators.CONSTRUCTOR_TITLE)
+        
+    @allure.step("проверить url страницы")
+    def is_main_page_url(self):
+        return self.get_current_url() == BASE_URL
 
     @allure.step("Клик по ингредиенту булка") 
     def click_first_bun(self):

@@ -14,7 +14,7 @@ class TestIngredientWindow:
     def test_open_ingredient_window(self, driver: WebDriver):
         main_page = MainPage(driver)
         main_page.open_main_page()
-        main_page.is_main_page_open()
+        main_page.wait_main_page_loaded()
         main_page.click_first_bun()
 
         assert main_page.display_ingredient_details_title()
@@ -23,7 +23,7 @@ class TestIngredientWindow:
     def test_close_ingredient_window(self, driver: WebDriver):
         main_page = MainPage(driver)
         main_page.open_main_page()
-        main_page.is_main_page_open()
+        main_page.wait_main_page_loaded()
         main_page.click_first_bun()
 
         main_page.click_close_button()
@@ -44,7 +44,7 @@ class TestIngredientСounter:
         main = MainPage(driver)
 
         main.open_main_page()
-        main.is_main_page_open()
+        main.wait_main_page_loaded()
 
         before = main.get_first_ingredient_counter(counter_locator)
 

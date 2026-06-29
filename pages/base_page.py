@@ -127,3 +127,7 @@ class BasePage:
         element = self.wait_visibility(locator)
         element.clear()
         element.send_keys(text)
+    
+    @allure.step("Получить адрес текущей страницы")
+    def get_current_url(self):
+        return self.driver.current_url
