@@ -1,4 +1,3 @@
-# Diplom_3
 # Stellar Burgers UI Tests
 
 Автоматизированные UI-тесты для веб-приложения **Stellar Burgers**, реализованные с использованием паттерна **Page Object Model (POM)**, запускаемые в **Google Chrome** и **Mozilla Firefox**, с формированием отчётов через **Allure**.
